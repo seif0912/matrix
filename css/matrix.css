@@ -85,14 +85,6 @@ ul {
   height: 100%;
 }
 
-.hero .container .logo {
-  font-family: 'Myriad Pro';
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 30px;
-  color: white;
-}
-
 .hero .container nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,6 +95,14 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.hero .container nav .logo {
+  font-family: 'Myriad Pro';
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: white;
 }
 
 .hero .container nav .links {
@@ -148,6 +148,30 @@ ul {
   margin-left: 5px;
 }
 
+.hero .container nav .burger {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  display: none;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.hero .container nav .burger span {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  display: block;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.hero .container nav .burger span:not(:last-child) {
+  margin-bottom: 4px;
+}
+
 .hero .container .welcome {
   color: white;
   position: absolute;
@@ -162,8 +186,10 @@ ul {
 }
 
 .hero .container .welcome h1 {
-  font-size: 60px;
+  font-size: 50px;
   position: relative;
+  margin-bottom: 50px;
+  text-transform: uppercase;
 }
 
 .hero .container .welcome h1::before {
@@ -175,7 +201,7 @@ ul {
           transform: translateX(-50%);
   background-color: var(--theme-color);
   left: 50%;
-  bottom: -20px;
+  bottom: -23px;
 }
 
 .hero .container .welcome p {
@@ -187,7 +213,7 @@ ul {
 .hero .container .welcome a {
   text-transform: capitalize;
   color: var(--text-color);
-  margin-top: 20px;
+  margin-top: 25px;
   padding: 15px 30px;
   border: 2px solid var(--text-color);
   display: inline-block;
@@ -197,7 +223,7 @@ ul {
 .hero .container .welcome a::before {
   position: absolute;
   content: '';
-  height: 100%;
+  height: 101%;
   width: 0;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -215,5 +241,101 @@ ul {
 
 .hero .container .welcome a:hover::before {
   width: 101%;
+}
+
+@media (max-width: 790px) {
+  .hero .container nav .ca-se,
+  .hero .container nav .links {
+    display: none;
+  }
+  .hero .container nav .burger {
+    display: block;
+  }
+  .hero .container nav .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hero .container nav .burger.active span:nth-child(1) {
+    -webkit-transform: rotate(-45deg) translate(-4px, 7px);
+            transform: rotate(-45deg) translate(-4px, 7px);
+  }
+  .hero .container nav .burger.active span:nth-child(3) {
+    -webkit-transform: rotate(45deg) translate(-4px, -7px);
+            transform: rotate(45deg) translate(-4px, -7px);
+  }
+  .hero .container nav.active {
+    position: relative;
+  }
+  .hero .container nav.active .links {
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 250px;
+    position: absolute;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.85);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    top: 100%;
+    gap: 20px;
+    padding: 20px 0;
+    z-index: 99;
+  }
+  .hero .container nav.active .links::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 15px solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.75) transparent;
+    top: -30px;
+    right: 12px;
+  }
+  .hero .container nav.active .links li {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .hero .container nav.active .links li a::before {
+    bottom: 10px;
+  }
+  .hero .container nav.active .ca-se {
+    position: absolute;
+    right: 0;
+    bottom: -300px;
+    width: 250px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 10px;
+    background-color: rgba(14, 14, 14, 0.95);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    padding: 20px 0;
+    z-index: 99;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+  .hero .container .welcome h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  .hero .container .welcome p {
+    font-size: 14px;
+    padding: 15px;
+  }
+  .hero .container .welcome a {
+    margin-top: 15px;
+  }
 }
 /*# sourceMappingURL=matrix.css.map */
