@@ -1,0 +1,199 @@
+/* Start Global rules */
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../myriad_pro/Myriad\ Pro\ Black.otf') format('opentype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../myriad_pro/Myriad\ Pro\ Light.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root {
+    box-sizing: border-box;
+    --text-color: #e6e4e5;
+    --theme-color: #2ecc71;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: '', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/*medium*/
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/*large*/
+
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+
+/* End Global rules */
+
+.hero{
+    background-image: url('../images/header.png');
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 0;
+    }
+    .container{
+        position: relative;
+        height: 100%;
+        .logo{
+            font-family: 'Myriad Pro';
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 30px;
+            color: white;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .links{
+                display: flex;
+                gap: 45px;
+
+                li{
+                    a{
+                        color: var(--text-color);
+                        text-transform: uppercase;
+                        position: relative;
+                        padding: 20px 0;
+                        &::before{
+                            position: absolute;
+                            content: '';
+                            height: 5px;
+                            width: 0;
+                            transform: translateX(-50%);
+                            background-color: var(--theme-color);
+                            left: 50%;
+                            bottom: 0;
+                            transition: .2s;
+                        }
+                        &:hover::before{
+                            width: 125%;
+                            color: white;
+                        }
+                    }
+                    
+                }
+            }
+            .ca-se{
+                i{
+                    color: white;
+                    cursor: pointer;
+                    padding: 10px;
+                    &:last-child{
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+        .welcome{
+            color: white;
+            position: absolute;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            width: fit-content;
+            h1{
+                font-size: 60px;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    height: 5px;
+                    width: 125px;
+                    transform: translateX(-50%);
+                    background-color: var(--theme-color);
+                    left: 50%;
+                    bottom: -20px;
+                }
+            }
+            p{
+                max-width: 525px;
+                margin: auto;
+                color: var(--text-color);
+            }
+            a{
+                text-transform: capitalize;
+                color: var(--text-color);
+                margin-top: 20px;
+                padding: 15px 30px;
+                border: 2px solid var(--text-color);
+                display: inline-block;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    height: 100%;
+                    width: 0;
+                    transform: translateX(-50%);
+                    background-color: white;
+                    left: 50%;
+                    bottom: 0;
+                    transition: .2s;
+                    z-index: -1;
+                }
+                &:hover{
+                    color: black;
+                }
+                &:hover::before{
+                    width: 101%;
+                }
+                
+            }
+        }
+    }
+
+}
