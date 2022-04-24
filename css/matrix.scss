@@ -67,7 +67,31 @@ ul {
     }
 }
 
-
+.main-title{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 36px;
+    position: relative;
+    width: fit-content;
+    margin: 100px auto;
+    &::before{
+        content: '';
+        position: absolute;
+        background-color: var(--theme-color);
+        width: 200%;
+        height: 200%;
+        z-index: -1;
+        transform: translate(-50%,-50%) rotate(-7.5deg);
+        left: 50%;
+        top: 50%;
+    }
+}
+@media (max-width: 500px){
+    .main-title{
+        font-size: 32px;
+        margin: 85px auto;
+    }
+}
 
 /* End Global rules */
 
@@ -183,6 +207,7 @@ ul {
                 max-width: 525px;
                 margin: auto;
                 color: var(--text-color);
+                line-height: 1.6;
             }
             a{
                 text-transform: capitalize;
