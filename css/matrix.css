@@ -382,7 +382,7 @@ ul {
 /* end hero */
 /* start about */
 .about-section {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .about-section .about {
@@ -552,7 +552,7 @@ ul {
 }
 
 .about-section .boxes {
-  margin: 70px 0 40px;
+  margin: 70px 0 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -590,4 +590,99 @@ ul {
 }
 
 /* end about */
+/* start recent works */
+.recent-works .container .shuffle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.recent-works .container .shuffle li {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 20px;
+  text-transform: uppercase;
+}
+
+.recent-works .container .shuffle li.active {
+  color: var(--theme-color);
+}
+
+.recent-works .imgs-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.recent-works .imgs-container .box {
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.recent-works .imgs-container .box:hover .caption {
+  bottom: 0;
+}
+
+.recent-works .imgs-container .box:hover img {
+  -webkit-transform: rotate(3deg) scale(1.1);
+          transform: rotate(3deg) scale(1.1);
+}
+
+.recent-works .imgs-container .box img {
+  max-width: 100%;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.recent-works .imgs-container .box .caption {
+  position: absolute;
+  left: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.712);
+  width: 100%;
+  -webkit-transition: .3s;
+  transition: .3s;
+  bottom: -100%;
+}
+
+.recent-works .imgs-container .box .caption h4 {
+  font-weight: 900;
+  margin-bottom: 25px;
+  font-size: 18px;
+  position: relative;
+}
+
+.recent-works .imgs-container .box .caption h4::before {
+  position: absolute;
+  content: '';
+  height: 5px;
+  width: 50px;
+  background-color: var(--theme-color);
+  left: 0;
+  bottom: -15px;
+}
+
+@media (min-width: 650px) {
+  .recent-works .imgs-container .box {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+}
+
+@media (min-width: 1080px) {
+  .recent-works .imgs-container .box {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+  }
+}
+
+/* end recent works */
 /*# sourceMappingURL=matrix.css.map */

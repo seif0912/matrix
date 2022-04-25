@@ -347,7 +347,7 @@ ul {
 /* start about */
 
 .about-section{
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     .about{
         display: flex;
         gap: 5%;
@@ -490,7 +490,7 @@ ul {
 
 .about-section{
     .boxes{
-        margin: 70px 0 40px;
+        margin: 70px 0 60px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -519,7 +519,85 @@ ul {
     }
 }
 
-
-
-
 /* end about */
+
+/* start recent works */
+
+.recent-works{
+    .container{
+        .shuffle{
+            display: flex;
+            justify-content: center;
+            li{
+                padding: 10px;
+                font-weight: bold;
+                font-size: 18px;
+                margin: 0 20px;
+                text-transform: uppercase;
+                &.active{
+                    color: var(--theme-color);
+                }
+            }
+        }
+    }
+    .imgs-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 60px;
+
+        .box {
+            position: relative;
+            overflow: hidden;
+            color: white;
+            &:hover .caption {
+                bottom: 0;
+            }
+            &:hover img {
+                transform: rotate(3deg) scale(1.1);
+            }
+            img {
+                max-width: 100%;
+                transition: .3s;
+            }
+            .caption {
+                position: absolute;
+                left: 0;
+                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.712);
+                width: 100%;
+                transition: .3s;
+                bottom: -100%;
+                h4 {
+                    font-weight: 900;
+                    margin-bottom: 25px;
+                    font-size: 18px;
+                    position: relative;
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        height: 5px;
+                        width: 50px;
+                        background-color: var(--theme-color);
+                        left: 0;
+                        bottom: -15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width:650px) {
+    .recent-works .imgs-container .box {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width:1080px) {
+    .recent-works .imgs-container .box {
+        flex-basis: 25%;
+    }
+}
+
+/* end recent works */
