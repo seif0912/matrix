@@ -544,7 +544,9 @@ ul {
         display: flex;
         flex-wrap: wrap;
         margin-top: 60px;
-
+        max-width: 2000px;
+        margin-left: auto;
+        margin-right: auto;
         .box {
             position: relative;
             overflow: hidden;
@@ -601,3 +603,70 @@ ul {
 }
 
 /* end recent works */
+
+/* start news */
+
+.news{
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+        .box{
+            width: 340px;
+            color: #777;
+            padding-bottom: 50px;
+            transition: .25s;
+            .image{
+                position: relative;
+                img{
+                    width: 100%;
+                }
+                p{
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    top: 50%;
+                    left: 50%;
+                    color: white;
+                    font-size: 18px;
+                    display: inline-block;
+                    margin: auto;
+                    text-transform: uppercase;
+                    opacity: 0;
+                    transition: .25s;
+                }
+                &::before{
+                    content: '';
+                    height: 80px;
+                    width: 100%;
+                    transform: translateY(-50%);
+                    top: 50%;
+                    left: 0;
+                    position: absolute;
+                    background-color: var(--theme-color);
+                    opacity: 0;
+                    transition: .25s;
+                }
+            }
+            h2{
+                margin-bottom: 0px;
+                color: black;
+                transition: .25s;
+            }
+            &:hover{
+                h2{
+                    color: var(--theme-color);
+                }
+                .image::before{
+                    opacity: .6;
+                }
+                .image p {
+                    opacity: 1;
+                }
+            }
+            
+        }
+    }
+}
+
+/* end news */
