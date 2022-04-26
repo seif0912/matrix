@@ -528,6 +528,7 @@ ul {
         .shuffle{
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             li{
                 padding: 10px;
                 font-weight: bold;
@@ -595,6 +596,8 @@ ul {
         flex-basis: 50%;
     }
 }
+
+
 
 @media (min-width:1080px) {
     .recent-works .imgs-container .box {
@@ -670,3 +673,46 @@ ul {
 }
 
 /* end news */
+
+/* start quote */
+
+.quote{
+    height: 80vh;
+    width: 100%;
+    background-image: url('../images/quote.jpg');
+    background-size: cover;
+    background-position: right;
+    
+    .container{
+        position: relative;
+        height: 100%;
+        .quote-box{
+            position: absolute;
+            right: 0;
+            max-width: 415px;
+            transform: translateY(-50%);
+            top: 50%;
+            padding: 15px;
+            i{
+                font-size: 60px;
+                color: rgba(33, 33, 218, 0.384);
+            }
+            h2{
+                font-weight: 900;
+                text-transform: capitalize;
+                text-align: right;
+                margin-bottom: 5px;
+            }
+            h4{
+                text-align: right;
+                color: #333;
+                margin-top: 0;
+            }
+            p{
+                color: #333;
+            }
+        }
+    }
+}
+
+/* end quote */

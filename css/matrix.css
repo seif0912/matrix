@@ -598,6 +598,8 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .recent-works .container .shuffle li {
@@ -768,4 +770,51 @@ ul {
 }
 
 /* end news */
+/* start quote */
+.quote {
+  height: 80vh;
+  width: 100%;
+  background-image: url("../images/quote.jpg");
+  background-size: cover;
+  background-position: right;
+}
+
+.quote .container {
+  position: relative;
+  height: 100%;
+}
+
+.quote .container .quote-box {
+  position: absolute;
+  right: 0;
+  max-width: 415px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+  padding: 15px;
+}
+
+.quote .container .quote-box i {
+  font-size: 60px;
+  color: rgba(33, 33, 218, 0.384);
+}
+
+.quote .container .quote-box h2 {
+  font-weight: 900;
+  text-transform: capitalize;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.quote .container .quote-box h4 {
+  text-align: right;
+  color: #333;
+  margin-top: 0;
+}
+
+.quote .container .quote-box p {
+  color: #333;
+}
+
+/* end quote */
 /*# sourceMappingURL=matrix.css.map */
