@@ -77,7 +77,7 @@ ul {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 100px auto;
+  margin: 130px auto 80px;
   font-weight: normal;
 }
 
@@ -817,4 +817,114 @@ ul {
 }
 
 /* end quote */
+/* start team */
+.team {
+  margin-bottom: 100px;
+}
+
+.team .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.team .container .pair {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 25px;
+}
+
+.team .container .pair:last-child {
+  margin-top: 25px;
+}
+
+.team .container .pair .box {
+  max-width: 560px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 25px;
+}
+
+.team .container .pair .box .image {
+  height: 255px;
+  width: 255px;
+  background-image: url("../images/about.png");
+  background-size: cover;
+  margin: 0;
+  position: relative;
+}
+
+.team .container .pair .box .image .back {
+  width: 100%;
+  height: 100%;
+  background-color: var(--theme-color);
+  opacity: 0;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.team .container .pair .box .image .social {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  left: 50%;
+  opacity: 0;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.team .container .pair .box .image .social i {
+  padding: 15px;
+  background-color: var(--theme-color);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.team .container .pair .box .info {
+  width: 280px;
+  color: #777;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.team .container .pair .box .info h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: black;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.team .container .pair .box .info h4 {
+  margin-top: 0;
+}
+
+.team .container .pair .box:hover h2 {
+  color: var(--theme-color);
+}
+
+.team .container .pair .box:hover .image .back {
+  opacity: .3;
+}
+
+.team .container .pair .box:hover .image .social {
+  opacity: 1;
+}
+
+.team .container .pair .box:hover .info {
+  color: #333;
+}
+
+/* end team */
 /*# sourceMappingURL=matrix.css.map */
