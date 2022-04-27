@@ -927,7 +927,7 @@ ul {
 }
 
 /* end team */
-/* the verge */
+/* logos */
 .logos {
   background-image: url("../images/logos.jpg");
   background-position: center;
@@ -976,5 +976,138 @@ ul {
   }
 }
 
-/* the verge end*/
+/* logos end*/
+/* start pricing */
+.pricing {
+  padding-bottom: 50px;
+}
+
+.pricing .container {
+  /*
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pricing .container .box {
+  text-align: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #eaeaea;
+  max-width: 340px;
+  -webkit-transition: .25s;
+  transition: .25s;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.pricing .container .box .image {
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+}
+
+.pricing .container .box .image p {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  color: white;
+  z-index: 99;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pricing .container .box .image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .7;
+  z-index: 2;
+}
+
+.pricing .container .box .image::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -1px;
+  border-style: solid;
+  border-width: 0 0 50px 360px;
+  border-color: transparent transparent #eaeaea transparent;
+  -webkit-transition: .25s;
+  transition: .25s;
+  z-index: 5;
+}
+
+.pricing .container .box .image img {
+  max-width: 100%;
+}
+
+.pricing .container .box .price {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.pricing .container .box .price .amount {
+  font-size: 50px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.pricing .container .box .price .amount .currency {
+  position: absolute;
+  top: 5px;
+  left: -12px;
+  font-size: 22px;
+}
+
+.pricing .container .box ul li {
+  padding: 7px;
+  color: #333;
+}
+
+.pricing .container .box a {
+  color: white;
+  padding: 15px 30px;
+  background-color: var(--theme-color);
+  margin: 30px auto 40px;
+  display: inline-block;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.pricing .container .box a:hover {
+  opacity: .8;
+}
+
+.pricing .container .box:hover {
+  background-color: #efefef;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.pricing .container .box:hover .image::after {
+  border-color: transparent transparent #efefef transparent;
+  border-width: 170px 500px 50px 0;
+}
+
+/* end pricing */
 /*# sourceMappingURL=matrix.css.map */

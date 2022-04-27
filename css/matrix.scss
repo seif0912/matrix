@@ -804,7 +804,7 @@ ul {
 
 /* end team */
 
-/* the verge */
+/* logos */
 
 .logos{
     background-image: url('../images/logos.jpg');
@@ -842,4 +842,115 @@ ul {
     }
 }
 
-/* the verge end*/
+/* logos end*/
+
+/* start pricing */
+
+.pricing{
+    padding-bottom: 50px;
+    .container{/*
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: center;
+        .box {
+            text-align: center;
+            height: fit-content;
+            background-color: #eaeaea;
+            max-width: 340px;
+            transition: .25s;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            .image {
+                position: relative;
+                overflow: hidden;
+                height: 150px;
+                p{
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    top: 40%;
+                    left: 50%;
+                    text-align: center;
+                    color: white;
+                    z-index: 99;
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: black;
+                    opacity: .7;
+                    z-index: 2;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    right: -1px;
+                    border-style: solid;
+                    border-width: 0 0 50px 360px;
+                    border-color: transparent transparent #eaeaea transparent;
+                    transition: .25s;
+                    z-index: 5;
+                }
+                img {
+                    max-width: 100%;
+                }
+                
+                
+            }
+            .price {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                font-weight: bold;
+                .amount {
+                    font-size: 50px;
+                    margin-bottom: 25px;
+                    position: relative;
+                    .currency{
+                        position: absolute;
+                        top: 5px;
+                        left: -12px;
+                        font-size: 22px;
+                    }
+                }
+                .time{
+                }
+            }
+            ul li{
+                padding: 7px;
+                color: #333;
+
+            }
+            a{
+                color: white;
+                padding: 15px 30px;
+                background-color: var(--theme-color);
+                margin: 30px auto 40px;
+                display: inline-block;
+                transition: .25s;
+                &:hover{
+                    opacity: .8;
+                }
+            }
+            &:hover{
+                background-color: #efefef;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+                .image::after{
+                    border-color: transparent transparent #efefef transparent;
+                    border-width: 170px 500px 50px 0;
+                }
+            }
+        }
+    }
+}
+
+/* end pricing */
