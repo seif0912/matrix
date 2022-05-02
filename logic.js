@@ -13,3 +13,8 @@ window.addEventListener("resize", function () {
         nav.classList.remove("active");
     }
 });
+
+window.addEventListener('scroll', ()=>{
+    let nav = document.querySelector('.hero nav')
+    nav.classList.toggle('sticky', window.scrollY > 0)
+})

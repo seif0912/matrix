@@ -115,13 +115,29 @@ ul {
         background-color: rgba(0, 0, 0, 0.8);
         z-index: 0;
     }
-    .container{
-        position: relative;
-        height: 100%;
+    
         nav{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            .container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            position: fixed;
+            width: 100%;
+            transition: .25s;
+            z-index: 9999;
+            &.sticky{
+                background-color: white;
+                .logo{
+                    color: black;
+                }
+                .ca-se i{
+                    color: black;
+                }
+                .links li a{
+                    color: #333;
+                }
+            }
             .logo{
                 font-family: 'Myriad Pro';
                 font-weight: bold;
@@ -185,6 +201,7 @@ ul {
                     }
                 }
             }
+            
         }
         .welcome{
             color: white;
@@ -245,17 +262,27 @@ ul {
                 
             }
         }
-    }
+    
 
 }
 
 @media (max-width: 790px){
     .hero{
-        .container{
             nav{
                 .ca-se,
                 .links{
                     display: none;
+                }
+                &.sticky{
+                    .burger span{
+                        background-color: black;
+                    }
+                    .ca-se i{
+                        color: white;
+                    }
+                    .links li a{
+                        color: #eee;
+                    }
                 }
                 .burger{
 
@@ -276,7 +303,6 @@ ul {
                     
                 }
                 &.active{
-                    position: relative;
                     .links{
                         right: 0;
                         display: flex;
@@ -299,7 +325,7 @@ ul {
                             border: 15px solid;
                             border-color: transparent transparent rgba(0, 0, 0, 0.75) transparent;
                             top: -30px;
-                            right: 12px;
+                            right: 25px;
                         }
                         li{
                             width: fit-content;
@@ -339,7 +365,7 @@ ul {
                     margin-top: 15px;
                 }
             }
-        }
+        
     }
 }
 /* end hero */

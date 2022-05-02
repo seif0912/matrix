@@ -119,12 +119,15 @@ ul {
   z-index: 0;
 }
 
-.hero .container {
-  position: relative;
-  height: 100%;
+.hero nav {
+  position: fixed;
+  width: 100%;
+  -webkit-transition: .25s;
+  transition: .25s;
+  z-index: 9999;
 }
 
-.hero .container nav {
+.hero nav .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,7 +139,23 @@ ul {
           align-items: center;
 }
 
-.hero .container nav .logo {
+.hero nav.sticky {
+  background-color: white;
+}
+
+.hero nav.sticky .logo {
+  color: black;
+}
+
+.hero nav.sticky .ca-se i {
+  color: black;
+}
+
+.hero nav.sticky .links li a {
+  color: #333;
+}
+
+.hero nav .logo {
   font-family: 'Myriad Pro';
   font-weight: bold;
   text-transform: uppercase;
@@ -144,21 +163,21 @@ ul {
   color: white;
 }
 
-.hero .container nav .links {
+.hero nav .links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 45px;
 }
 
-.hero .container nav .links li a {
+.hero nav .links li a {
   color: var(--text-color);
   text-transform: uppercase;
   position: relative;
   padding: 20px 0;
 }
 
-.hero .container nav .links li a::before {
+.hero nav .links li a::before {
   position: absolute;
   content: '';
   height: 5px;
@@ -172,22 +191,22 @@ ul {
   transition: .2s;
 }
 
-.hero .container nav .links li a:hover::before {
+.hero nav .links li a:hover::before {
   width: 125%;
   color: white;
 }
 
-.hero .container nav .ca-se i {
+.hero nav .ca-se i {
   color: white;
   cursor: pointer;
   padding: 10px;
 }
 
-.hero .container nav .ca-se i:last-child {
+.hero nav .ca-se i:last-child {
   margin-left: 5px;
 }
 
-.hero .container nav .burger {
+.hero nav .burger {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -198,7 +217,7 @@ ul {
   cursor: pointer;
 }
 
-.hero .container nav .burger span {
+.hero nav .burger span {
   height: 3px;
   width: 25px;
   background-color: white;
@@ -207,11 +226,11 @@ ul {
   transition: inherit;
 }
 
-.hero .container nav .burger span:not(:last-child) {
+.hero nav .burger span:not(:last-child) {
   margin-bottom: 4px;
 }
 
-.hero .container .welcome {
+.hero .welcome {
   color: white;
   position: absolute;
   text-align: center;
@@ -224,14 +243,14 @@ ul {
   width: fit-content;
 }
 
-.hero .container .welcome h1 {
+.hero .welcome h1 {
   font-size: 50px;
   position: relative;
   margin-bottom: 50px;
   text-transform: uppercase;
 }
 
-.hero .container .welcome h1::before {
+.hero .welcome h1::before {
   position: absolute;
   content: '';
   height: 5px;
@@ -243,14 +262,14 @@ ul {
   bottom: -23px;
 }
 
-.hero .container .welcome p {
+.hero .welcome p {
   max-width: 525px;
   margin: auto;
   color: var(--text-color);
   line-height: 1.6;
 }
 
-.hero .container .welcome a {
+.hero .welcome a {
   text-transform: capitalize;
   color: var(--text-color);
   margin-top: 25px;
@@ -260,7 +279,7 @@ ul {
   position: relative;
 }
 
-.hero .container .welcome a::before {
+.hero .welcome a::before {
   position: absolute;
   content: '';
   height: 101%;
@@ -275,37 +294,43 @@ ul {
   z-index: -1;
 }
 
-.hero .container .welcome a:hover {
+.hero .welcome a:hover {
   color: black;
 }
 
-.hero .container .welcome a:hover::before {
+.hero .welcome a:hover::before {
   width: 101%;
 }
 
 @media (max-width: 790px) {
-  .hero .container nav .ca-se,
-  .hero .container nav .links {
+  .hero nav .ca-se,
+  .hero nav .links {
     display: none;
   }
-  .hero .container nav .burger {
+  .hero nav.sticky .burger span {
+    background-color: black;
+  }
+  .hero nav.sticky .ca-se i {
+    color: white;
+  }
+  .hero nav.sticky .links li a {
+    color: #eee;
+  }
+  .hero nav .burger {
     display: block;
   }
-  .hero .container nav .burger.active span:nth-child(2) {
+  .hero nav .burger.active span:nth-child(2) {
     opacity: 0;
   }
-  .hero .container nav .burger.active span:nth-child(1) {
+  .hero nav .burger.active span:nth-child(1) {
     -webkit-transform: rotate(-45deg) translate(-4px, 7px);
             transform: rotate(-45deg) translate(-4px, 7px);
   }
-  .hero .container nav .burger.active span:nth-child(3) {
+  .hero nav .burger.active span:nth-child(3) {
     -webkit-transform: rotate(45deg) translate(-4px, -7px);
             transform: rotate(45deg) translate(-4px, -7px);
   }
-  .hero .container nav.active {
-    position: relative;
-  }
-  .hero .container nav.active .links {
+  .hero nav.active .links {
     right: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -328,7 +353,7 @@ ul {
     padding: 20px 0;
     z-index: 99;
   }
-  .hero .container nav.active .links::before {
+  .hero nav.active .links::before {
     position: absolute;
     content: '';
     width: 0;
@@ -336,17 +361,17 @@ ul {
     border: 15px solid;
     border-color: transparent transparent rgba(0, 0, 0, 0.75) transparent;
     top: -30px;
-    right: 12px;
+    right: 25px;
   }
-  .hero .container nav.active .links li {
+  .hero nav.active .links li {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
   }
-  .hero .container nav.active .links li a::before {
+  .hero nav.active .links li a::before {
     bottom: 10px;
   }
-  .hero .container nav.active .ca-se {
+  .hero nav.active .ca-se {
     position: absolute;
     right: 0;
     bottom: -300px;
@@ -366,15 +391,15 @@ ul {
     -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
             box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   }
-  .hero .container .welcome h1 {
+  .hero .welcome h1 {
     font-size: 36px;
     margin-bottom: 30px;
   }
-  .hero .container .welcome p {
+  .hero .welcome p {
     font-size: 14px;
     padding: 15px;
   }
-  .hero .container .welcome a {
+  .hero .welcome a {
     margin-top: 15px;
   }
 }
