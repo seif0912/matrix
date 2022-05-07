@@ -99,6 +99,16 @@ ul {
     }
 }
 
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #999;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #333;
+    border-radius: 1em;
+}
+
 /* End Global rules */
 
 /* start hero */
